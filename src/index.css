@@ -5,9 +5,52 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 600px;
+  height: 400px;
+  padding: 20px;
+  overflow-y: auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.ant-card {
+  margin-bottom: 12px;
+  border-color: black;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.ant-card button {
+  border-color: black;
+}
+
+.ant-form-item {
+  margin-bottom: 0;
+}
+
+.ant-input-number {
+  width: 100%;
+}
+
+.ant-input::placeholder,
+.ant-input-number input::placeholder {
+  color: rgb(166, 166, 166);
+}
+
+.ant-input,
+.ant-input-number {
+  color: black;
+  border-color: black;
+}
+
+.controls {
+  left: 0;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
 }
