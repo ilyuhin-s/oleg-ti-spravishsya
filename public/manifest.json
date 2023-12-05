@@ -2,9 +2,9 @@
   "short_name": "Планирование",
   "name": "S.Volume планирование",
   "icons": {
-    "16": "favicon.ico",
-    "48": "logo192.png",
-    "128": "logo192.png"
+    "16": "samolet.png",
+    "48": "samolet.png",
+    "128": "samolet.png"
   },
   "version": "1.0",
   "manifest_version": 3,
@@ -12,24 +12,40 @@
     "default_popup": "index.html",
     "default_title": "Планирование"
   },
+  "background": {
+    "service_worker": "/static/js/background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["static/js/content.js"]
+      "run_at": "document_end",
+      "matches": [
+        "https://miro.com/*"
+      ],
+      "js": [
+        "/static/js/content.js"
+      ]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "test.js",
+        "get-jira.js",
+        "get-jira-issues.js",
+        "samolet.png"
+      ],
+      "matches": [
+        "https://miro.com/*"
+      ],
+      "extension_ids": []
+    }
+  ],
   "host_permissions": [
-    "https://*/*"
+    "https://miro.com/*"
   ],
   "permissions": [
-    "scripting",
     "tabs",
-    "notifications",
-    "http://*/",
-    "https://*/"
+    "activeTab",
+    "storage"
   ]
 }
